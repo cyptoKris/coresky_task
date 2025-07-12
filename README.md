@@ -30,20 +30,20 @@
 
 1. **克隆项目**
    ```bash
-   git clone <repository-url>
-   cd coresky_副本
+   git clone https://github.com/cyptoKris/coresky_task.git
+   cd coresky_task
    ```
 
 2. **安装依赖**
    ```bash
-   pip install requests pycryptodome ddddocr eth-account openpyxl loguru
+   pip install -r requirements.txt
    ```
 
 3. **配置代理（推荐）**
    
    为了避免IP限制和提高成功率，强烈建议使用动态代理服务。推荐使用 [Kookeey 代理服务](https://www.kookeey.com/?aff=23304422)，提供稳定的动态IP代理。
 
-   在 `coresky_daily.py` 文件中配置代理：
+   在 `src/coresky_daily.py` 文件中配置代理：
    ```python
    proxy = {
        'http': 'http://username:password@proxy-host:port',
@@ -68,7 +68,7 @@
 
 2. **运行脚本**
    ```bash
-   python coresky_daily.py
+   python src/coresky_daily.py
    ```
 
 3. **查看结果**
@@ -83,7 +83,7 @@
 
 #### 代理配置
 ```python
-# 在 coresky_daily.py 中修改代理设置
+# 在 src/coresky_daily.py 中修改代理设置
 proxy = {
     'http': 'http://your-proxy-host:port',
     'https': 'http://your-proxy-host:port'
@@ -99,13 +99,17 @@ MAX_RETRIES = 3
 ## 📁 文件结构
 
 ```
-coresky_副本/
-├── coresky_daily.py      # 主要的自动化脚本
-├── ocr.py               # OCR相关工具类
-├── __init__.py          # Python包初始化文件
-├── 模版.xlsx             # 账户信息模板文件
-├── 完成的账户id.txt       # 记录已完成任务的账户
-└── README.md            # 项目说明文档
+coresky_task/
+├── src/                 # 源代码目录
+│   ├── coresky_daily.py # 主要的自动化脚本
+│   ├── ocr.py          # OCR相关工具类
+│   └── __init__.py     # Python包初始化文件
+├── requirements.txt     # 项目依赖
+├── .gitignore          # Git忽略文件
+├── 模版.xlsx            # 账户信息模板文件
+├── 完成的账户id.txt      # 记录已完成任务的账户
+├── LICENSE             # 开源协议
+└── README.md           # 项目说明文档
 ```
 
 ## 🔧 核心功能详解

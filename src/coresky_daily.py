@@ -15,13 +15,13 @@ from openpyxl.reader.excel import load_workbook
 
 
 def wr(_id):
-    with open(r"完成的账户id.txt", "a+") as f:
+    with open(r"../完成的账户id.txt", "a+") as f:
         f.write(_id + "\n")
 
 
 def rd():
     try:
-        with open(r"完成的账户id.txt", "r+") as f:
+        with open(r"../完成的账户id.txt", "r+") as f:
             return [i.replace("\n", "") for i in f.readlines()]
     except FileNotFoundError:
         return []
@@ -256,7 +256,7 @@ class Coresky:
 
 
 if __name__ == '__main__':
-    accounts = Coresky.read_accounts_from_excel("2025.xlsx")
+    accounts = Coresky.read_accounts_from_excel("../模版.xlsx")
     proxy = {
 
     }
