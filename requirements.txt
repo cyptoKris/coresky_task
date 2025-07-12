@@ -1,0 +1,6 @@
+requests>=2.25.1
+pycryptodome>=3.15.0
+ddddocr>=1.4.11
+eth-account>=0.8.0
+openpyxl>=3.0.9
+loguru>=0.6.0
